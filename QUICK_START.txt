@@ -1,0 +1,62 @@
+⚡ INSTRUCCIONES RÁPIDAS - DEPLOYMENT
+=====================================
+
+🎯 PASO 1: DESPLEGAR BACKEND
+-----------------------------
+1. Ve a: https://render.com
+2. Conecta GitHub
+3. New Web Service → Selecciona HavenClinic-Backend
+4. Render detectará render.yaml → Click "Create Web Service"
+5. Espera 5-10 min
+6. Copia tu URL: https://havenclinic-backend-XXXX.onrender.com
+
+🔧 PASO 2: ACTUALIZAR URLS
+---------------------------
+Backend - CorsConfig.java (línea 23):
+  Cambiar: https://[TU-USUARIO].github.io
+  Por: https://tu-usuario-real.github.io
+
+Frontend - environment.prod.ts:
+  Cambiar: apiUrl: 'https://tu-backend-app.onrender.com'
+  Por: apiUrl: 'https://TU-URL-REAL-DE-RENDER.onrender.com'
+
+💾 PASO 3: COMMIT Y PUSH
+-------------------------
+Backend:
+  cd HavenClinic-Backend
+  git add .
+  git commit -m "Configure production deployment"
+  git push
+
+Frontend:
+  cd HavenClinic-Angular-Frontend
+  git add .
+  git commit -m "Configure environment for production"
+  git push
+
+🚀 PASO 4: DEPLOY FRONTEND
+---------------------------
+  cd HavenClinic-Angular-Frontend
+  npm install
+  npm run build:deploy
+
+📱 PASO 5: HABILITAR GITHUB PAGES
+----------------------------------
+1. Ve a tu repo del frontend en GitHub
+2. Settings → Pages
+3. Source: gh-pages branch, / (root)
+4. Save
+5. Tu sitio estará en: https://tu-usuario.github.io/HavenClinic-Angular-Frontend/
+
+✅ VERIFICACIÓN
+---------------
+- Backend: https://tu-backend.onrender.com/swagger-ui.html
+- Frontend: https://tu-usuario.github.io/HavenClinic-Angular-Frontend/
+- Prueba login
+- Verifica que no haya errores de CORS (F12 → Console)
+
+❓ ¿PROBLEMAS?
+--------------
+Lee DEPLOYMENT.md para guía detallada.
+
+⏱️ NOTA: Primera petición al backend puede tardar 30-60 seg (Render free tier)

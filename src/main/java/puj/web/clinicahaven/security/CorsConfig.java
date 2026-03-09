@@ -19,7 +19,10 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowCredentials(true);
+        // Permitir localhost para desarrollo
         config.addAllowedOrigin("http://localhost:4200");
+        // Permitir GitHub Pages para producción - REEMPLAZA con tu URL real de GitHub Pages
+        config.addAllowedOrigin("https://[TU-USUARIO].github.io");
         config.setAllowedHeaders(Arrays.asList(
             HttpHeaders.AUTHORIZATION,
             HttpHeaders.CONTENT_TYPE,
@@ -33,6 +36,7 @@ public class CorsConfig {
                 HttpMethod.DELETE.name()
             )
         );
+        config.setExposedHeaders(Arrays.asList(HttpHeaders.AUTHORIZATION));
 
         source.registerCorsConfiguration("/**", config);
         FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>(new CorsFilter(source));

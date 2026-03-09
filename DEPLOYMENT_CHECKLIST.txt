@@ -1,0 +1,140 @@
+╔══════════════════════════════════════════════════════════════╗
+║           CHECKLIST RÁPIDO - DEPLOYMENT CON RENDER           ║
+╚══════════════════════════════════════════════════════════════╝
+
+📍 ANTES DE EMPEZAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] Git instalado
+[ ] Repositorio backend en GitHub y pusheado
+[ ] Repositorio frontend en GitHub y pusheado
+[ ] Node.js y npm instalados
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 PART 1: SETUP RENDER (15 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] 1. Ve a https://render.com
+[ ] 2. Sign up with GitHub
+[ ] 3. Click "New +" → "Web Service"
+[ ] 4. Conecta repositorio "HavenClinic-Backend"
+
+[ ] 5. CONFIGURACIÓN:
+    Name: havenclinic-backend
+    Region: Oregon (US West) o Frankfurt (Europe)
+    Branch: main
+    Runtime: Java
+    Build Command: ./mvnw clean install -DskipTests
+    Start Command: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/clinicahaven-0.0.1-SNAPSHOT.jar
+    
+[ ] 6. PLAN: Selecciona "Free"
+
+[ ] 7. VARIABLES DE ENTORNO:
+    SPRING_PROFILES_ACTIVE = prod
+    JAVA_TOOL_OPTIONS = -Xmx450m -Xms256m
+
+[ ] 8. Auto-Deploy: Yes ✓
+
+[ ] 9. Click "Create Web Service"
+
+[ ] 10. Espera 5-10 minutos
+
+[ ] 11. Copia tu URL: https://havenclinic-backend-____.onrender.com
+    ✍️ MI URL: _______________________________________
+
+[ ] 12. Prueba Swagger: [TU-URL]/swagger-ui.html
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 PART 2: ACTUALIZAR FRONTEND (5 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] 1. Abrir: src/environments/environment.prod.ts
+
+[ ] 2. Reemplazar apiUrl con tu URL de Render (sin slash final)
+
+[ ] 3. Guardar archivo
+
+[ ] 4. En terminal:
+    cd HavenClinic-Angular-Frontend
+    git add .
+    git commit -m "Update production API URL"
+    git push origin main
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 PART 3: DEPLOY FRONTEND (10 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] 1. En terminal:
+    cd HavenClinic-Angular-Frontend
+    npm install
+
+[ ] 2. Build y deploy:
+    npm run build:deploy
+
+[ ] 3. Ir a GitHub → Repositorio frontend → Settings → Pages
+
+[ ] 4. Configurar:
+    Source: gh-pages
+    Folder: / (root)
+    Click Save
+
+[ ] 5. Espera 2 minutos
+
+[ ] 6. Abre: https://johny2004.github.io/HavenClinic-Angular-Frontend/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ PART 4: VERIFICACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[ ] Backend Swagger funciona: [TU-URL]/swagger-ui.html
+[ ] Frontend carga correctamente
+[ ] Login funciona (usuario: a@c.m, pass: abc)
+[ ] No hay errores de CORS en consola (F12)
+[ ] Peticiones van al backend correcto (Network tab F12)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 MIS URLs
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Backend API:
+https://________________________________________________
+
+Backend Swagger:
+https://________________________________________________/swagger-ui.html
+
+Frontend:
+https://johny2004.github.io/HavenClinic-Angular-Frontend/
+
+Render Dashboard:
+https://dashboard.render.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ TROUBLESHOOTING RÁPIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ Backend no inicia:
+   → Verifica variables de entorno en Render
+   → Revisa logs en Render Dashboard
+
+❌ Error CORS:
+   → Verifica CorsConfig.java tiene: https://johny2004.github.io
+   → Espera 5 min para redespliegue automático
+
+❌ Build failed:
+   → Render → Manual Deploy → Clear build cache & deploy
+
+❌ 502 Bad Gateway:
+   → Backend dormido (plan free), espera 30-60 seg
+
+❌ Frontend no conecta:
+   → Verifica environment.prod.ts tiene URL correcta
+   → Verifica URL NO tiene / al final
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 ¡COMPLETADO!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fecha de deployment: ___/___/2026
+
+Para guía detallada ver: RENDER_STEP_BY_STEP.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
