@@ -1,0 +1,12 @@
+target/
+!target/clinicahaven-0.0.1-SNAPSHOT.jar
+.mvn/
+mvnw
+mvnw.cmd
+*.md
+.git
+.gitignore
+documentacion/
+DEPLOYMENT*.md
+RENDER_STEP_BY_STEP.md
+QUICK_START.txt
