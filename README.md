@@ -60,7 +60,7 @@
 - 📊 Consulta de tratamientos y medicamentos administrados
 - 🔍 Búsqueda de información de mascotas
 
-### Para Veterinarios 👨‍⚕️
+### Para Veterinarios 
 - 📝 Gestión de pacientes asignados
 - 💊 Registro de tratamientos y medicamentos
 - 📈 Historial completo de consultas
@@ -159,7 +159,7 @@ java -jar target\clinicahaven-0.0.1-SNAPSHOT.jar
 
 Una vez iniciada la aplicación, abre tu navegador en:
 
-- **Aplicación Principal:** http://localhost:8090/
+- **Aplicación Principal:** http://localhost:4200/
 - **Consola H2:** http://localhost:8090/h2
 - **Documentación API (Swagger):** http://localhost:8090/swagger-ui.html
 
@@ -191,21 +191,17 @@ Una vez iniciada la aplicación, abre tu navegador en:
 
 ```
 # Cliente
-Usuario: cliente@ejemplo.com
-Contraseña: cliente123
+Usuario: a@c.m
+Contraseña: abc
 
 # Veterinario
-Usuario: vet@ejemplo.com
-Contraseña: vet123
+Usuario: 	qwe@m.c
+Contraseña: abc
 
 # Administrador
-Usuario: admin@ejemplo.com
-Contraseña: admin123
+Usuario: 	user
+Contraseña: contra
 ```
-
-*(Nota: Estos se crean automáticamente al iniciar la aplicación gracias a `DatabaseInit.java`)*
-
----
 
 ## 📁 Estructura del Proyecto
 
