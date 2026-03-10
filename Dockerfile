@@ -25,4 +25,4 @@ EXPOSE 8090
 ENV SPRING_PROFILES_ACTIVE=prod
 
 # Comando de inicio
-ENTRYPOINT ["java", "-Dserver.port=$PORT", "-Dspring.profiles.active=prod", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
