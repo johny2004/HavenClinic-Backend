@@ -4,10 +4,10 @@
 
 📍 ANTES DE EMPEZAR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[ ] Git instalado
-[ ] Repositorio backend en GitHub y pusheado
-[ ] Repositorio frontend en GitHub y pusheado
-[ ] Node.js y npm instalados
+[ x] Git instalado
+[ x] Repositorio backend en GitHub y pusheado
+[ x] Repositorio frontend en GitHub y pusheado
+[Xmx450m ] Node.js y npm instalados
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -26,9 +26,9 @@
     Build Command: ./mvnw clean install -DskipTests
     Start Command: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/clinicahaven-0.0.1-SNAPSHOT.jar
     
-[ ] 6. PLAN: Selecciona "Free"
+[ x ] 6. PLAN: Selecciona "Free"
 
-[ ] 7. VARIABLES DE ENTORNO:
+[ x] 7. VARIABLES DE ENTORNO:
     SPRING_PROFILES_ACTIVE = prod
     JAVA_TOOL_OPTIONS = -Xmx450m -Xms256m
 
