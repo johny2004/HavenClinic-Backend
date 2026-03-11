@@ -24,7 +24,7 @@ import puj.web.clinicahaven.servicio.csvService;
 
 @Controller
 @Transactional
-@Profile("default")
+@Profile({"default", "prod"})
 public class DatabaseInit implements ApplicationRunner {
 
     @Autowired
