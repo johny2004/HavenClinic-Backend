@@ -22,6 +22,7 @@ public class CorsConfig {
         config.addAllowedOrigin("http://localhost:4200");
         // Permitir GitHub Pages para producción
         config.addAllowedOrigin("https://johny2004.github.io");
+        config.addAllowedOrigin("https://johny2004.github.io/HavenClinic-Angular-Frontend");
         // Permitir todos los headers
         config.addAllowedHeader("*");
         // Permitir todos los métodos HTTP
