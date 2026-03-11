@@ -5,8 +5,8 @@ import puj.web.clinicahaven.entity.Cliente;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-03-09T19:49:35-0500",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.45.0.v20260224-0835, environment: Java 21.0.10 (Eclipse Adoptium)"
+    date = "2026-03-11T13:18:41-0500",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.7 (Oracle Corporation)"
 )
 public class ClienteMapperImpl implements ClienteMapper {
 
@@ -18,11 +18,11 @@ public class ClienteMapperImpl implements ClienteMapper {
 
         ClienteDTO clienteDTO = new ClienteDTO();
 
-        clienteDTO.setCedula( cliente.getCedula() );
-        clienteDTO.setCelular( cliente.getCelular() );
         clienteDTO.setClienteId( cliente.getClienteId() );
-        clienteDTO.setCorreo( cliente.getCorreo() );
+        clienteDTO.setCedula( cliente.getCedula() );
         clienteDTO.setNombre( cliente.getNombre() );
+        clienteDTO.setCelular( cliente.getCelular() );
+        clienteDTO.setCorreo( cliente.getCorreo() );
 
         return clienteDTO;
     }

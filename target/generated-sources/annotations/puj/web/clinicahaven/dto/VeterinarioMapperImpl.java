@@ -5,8 +5,8 @@ import puj.web.clinicahaven.entity.Veterinario;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-03-09T19:49:35-0500",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.45.0.v20260224-0835, environment: Java 21.0.10 (Eclipse Adoptium)"
+    date = "2026-03-11T13:18:41-0500",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.7 (Oracle Corporation)"
 )
 public class VeterinarioMapperImpl implements VeterinarioMapper {
 
@@ -18,13 +18,13 @@ public class VeterinarioMapperImpl implements VeterinarioMapper {
 
         VeterinarioDTO veterinarioDTO = new VeterinarioDTO();
 
-        veterinarioDTO.setActivo( veterinario.getActivo() );
-        veterinarioDTO.setCedula( veterinario.getCedula() );
-        veterinarioDTO.setCelular( veterinario.getCelular() );
         veterinarioDTO.setCorreo( veterinario.getCorreo() );
+        veterinarioDTO.setCedula( veterinario.getCedula() );
+        veterinarioDTO.setNombre( veterinario.getNombre() );
+        veterinarioDTO.setCelular( veterinario.getCelular() );
         veterinarioDTO.setEspecialidad( veterinario.getEspecialidad() );
         veterinarioDTO.setFoto( veterinario.getFoto() );
-        veterinarioDTO.setNombre( veterinario.getNombre() );
+        veterinarioDTO.setActivo( veterinario.getActivo() );
 
         return veterinarioDTO;
     }

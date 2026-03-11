@@ -1,0 +1,9 @@
+puj\web\clinicahaven\e2e\UseCaseTest1.class
+puj\web\clinicahaven\controller\PetControllerTests.class
+puj\web\clinicahaven\repository\PetRepositoryTest.class
+puj\web\clinicahaven\e2e\PetHomeTest.class
+puj\web\clinicahaven\service\TratamientoServiceTestMock.class
+puj\web\clinicahaven\e2e\PetDetailTest.class
+puj\web\clinicahaven\e2e\UseCaseTest2.class
+puj\web\clinicahaven\service\TratamientoServiceNaive.class
+puj\web\clinicahaven\ClinicahavenApplicationTests.class
