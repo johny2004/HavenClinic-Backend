@@ -26,6 +26,7 @@ public class SecurityConfig {
     @Bean //decir que este metodo va a crear un bean que se va a manejar  de manejador de objetos 
      SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+            .cors(cors -> {})  // Habilitar CORS usando la configuración de CorsFilter
             .csrf(AbstractHttpConfigurer::disable)
             .headers(headers -> headers.frameOptions(frame -> frame.disable()))
             .authorizeHttpRequests(exchanges ->   //configurar lo que quiero que sea publico o no 
