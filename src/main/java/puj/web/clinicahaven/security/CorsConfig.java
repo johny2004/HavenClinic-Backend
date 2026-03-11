@@ -21,8 +21,9 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         // Permitir localhost para desarrollo
         config.addAllowedOrigin("http://localhost:4200");
-        // Permitir GitHub Pages para producción - REEMPLAZA con tu URL real de GitHub Pages
+        // Permitir GitHub Pages para producción (con y sin path del repo)
         config.addAllowedOrigin("https://johny2004.github.io");
+        config.addAllowedOriginPattern("https://johny2004.github.io/**");
         config.setAllowedHeaders(Arrays.asList(
             HttpHeaders.AUTHORIZATION,
             HttpHeaders.CONTENT_TYPE,
