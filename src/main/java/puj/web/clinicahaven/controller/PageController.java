@@ -28,7 +28,7 @@ import puj.web.clinicahaven.servicio.VeterinarioService;
 import puj.web.clinicahaven.servicio.adminService;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://johny2004.github.io"})
 public class PageController {
 
     

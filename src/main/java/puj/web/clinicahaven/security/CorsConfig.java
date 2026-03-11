@@ -21,8 +21,8 @@ public class CorsConfig {
         config.setAllowCredentials(true);
         // Permitir localhost para desarrollo
         config.addAllowedOrigin("http://localhost:4200");
-        // Permitir GitHub Pages para producción - REEMPLAZA con tu URL real de GitHub Pages
-        config.addAllowedOrigin("https://[TU-USUARIO].github.io");
+        // Permitir GitHub Pages para producción
+        config.addAllowedOrigin("https://johny2004.github.io");
         config.setAllowedHeaders(Arrays.asList(
             HttpHeaders.AUTHORIZATION,
             HttpHeaders.CONTENT_TYPE,
@@ -33,9 +33,11 @@ public class CorsConfig {
                 HttpMethod.GET.name(),
                 HttpMethod.POST.name(),
                 HttpMethod.PUT.name(),
-                HttpMethod.DELETE.name()
+                HttpMethod.DELETE.name(),
+                HttpMethod.OPTIONS.name()
             )
         );
+        config.setMaxAge(3600L);
         config.setExposedHeaders(Arrays.asList(HttpHeaders.AUTHORIZATION));
 
         source.registerCorsConfiguration("/**", config);

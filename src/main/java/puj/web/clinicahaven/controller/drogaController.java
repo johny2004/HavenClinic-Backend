@@ -14,7 +14,7 @@ import puj.web.clinicahaven.servicio.drogaService;
 
 @RestController
 @RequestMapping("/drogas")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://johny2004.github.io"})
 public class drogaController {
     @Autowired
     drogaService drogaService; 

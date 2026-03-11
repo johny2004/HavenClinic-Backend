@@ -27,7 +27,7 @@ import puj.web.clinicahaven.servicio.tratamientoService;
 
 @RestController
 @RequestMapping("/tratamientos")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://johny2004.github.io"})
 public class tratamientoController {
     @Autowired
     petService mascotaService;

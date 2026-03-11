@@ -41,7 +41,7 @@ import puj.web.clinicahaven.servicio.ClienteService;
 
 @RestController   //pasa de controller a restcontroller
 @RequestMapping("/cliente")
-@CrossOrigin (origins = "http://localhost:4200") //especifica al backend que paginas le pueden hacer peticiones//conecta con angular
+@CrossOrigin (origins = {"http://localhost:4200", "https://johny2004.github.io"}) //especifica al backend que paginas le pueden hacer peticiones//conecta con angular
 public class ClienteController {
     
 @Autowired
